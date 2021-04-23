@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Home, About, Users } from "./pages";
+import { Home, About, Users, Login, Registration } from "./pages";
 
 function App() {
   return (
@@ -22,23 +22,32 @@ function App() {
                 <Link to="/users">Users</Link>
               </li>
               <li>
-                <Link to="/admin">Login</Link>
+                <Link to="/login">Login</Link>
               </li>
               <li>
-                <Link to="/admin">Register</Link>
+                <Link to="/registration">Register</Link>
               </li>
             </ul>
           </nav>
 
           <Switch>
-            <Route path="/about">
+            <Route exact path="/about">
               <About />
             </Route>
-            <Route path="/users">
+            <Route exact path="/users">
               <Users />
             </Route>
-            <Route path="/">
+            <Route exact path="/registration">
+              <Registration />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="*">
+              <div>Not found</div>
             </Route>
           </Switch>
         </div>
