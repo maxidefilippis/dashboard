@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Home, About, Users, Login, Registration } from "./pages";
+import "../src/main.scss";
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
         <p>DASHBOARD ADMIN</p>
       </header>
       <Router>
-        <div>
-          <nav>
+        <div className="header">
+          <nav className="header__nav">
             <ul>
               <li>
                 <Link to="/">Home</Link>
